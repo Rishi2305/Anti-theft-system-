@@ -28,7 +28,8 @@ Before any incoming command is parsed, the phone number it is received from is c
 ## Description of important functions
 
 **1. Event Handling**
-'''
+
+```
 def event_handling(registered_numbers):
     """ Handling commands received through SMS """
     screen = serial.Serial("/dev/ttyUSB0",9600,timeout=3) # Reading serial port to check for any notifications
@@ -64,7 +65,7 @@ def event_handling(registered_numbers):
                     print("User does not exist in database")
             elif "LOCATION" in message:
                 send_coordinates(number)
-'''
+```
 
 **2. ** 
 

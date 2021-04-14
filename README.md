@@ -2,13 +2,13 @@
 
 To many people, a motor vehicle is often the second largest investment they make during their lifetime, only behind a home or land. Vehicle theft in the form of hijacking and carjacking is a prevalent issue in many countries, such as the USA, New Zealand and South Africa. Carjacking is described as the theft of stationery cars that don't contain any passengers. Hijacking is defined as the theft of a vehicle with occupants. Statistics indicate that there are approximately 88,000 vehicles stolen in South Africa alone during 2019. This is concerning as oftentimes the vehicle's driver's life is put at risk as they are forced to step out of their vehicle at gun point. There are a few commercial solutions that try to tackle the carjacking aspect of vehicle theft by attaching passive immobilizers in a hidden spot of the vehicle. These immobilizers require the driver to deactivate them within a certain time period after the engine's ignition to prevent the vehicle from stalling. However, this solution is not effective in cases of hijacking as the immobilizer would already be deactivated by the driver. The prototype discussed in this wiki aims to be effective in both forms of vehicle theft.
 
-Overview
+## Overview
 
 The prototype makes use of a Raspberry Pi 3b+ for computerized control, a GSM shield (with a SIM card from a valid network provider in the country of use) to read and send text messages and a GPS shield to read world co-ordinates. The prototype device communicates with the user’s cellular device using text messaging. The text messages are then parsed, and the necessary action will be taken. 
 
 The Raspberry Pi interfaces with the vehicle by means of the ignition 50 (IGN 50) wire. IGN 50 is a wire that connects the vehicle’s fuse box to the vehicle’s Engine Control Unit (ECU). The Raspberry Pi introduces a digital switch in this wire. 
 
-How the device works
+# How the device works
 
 When the vehicle is first turned on, the IGN 50 input is read by the Pi. The Pi then sends a text message notification to the user’s mobile device, alerting them that their vehicle is turned on. If the vehicle is being used by someone that is known by the owner, the owner may choose to do nothing after receiving the notification. But if the vehicle has been turned on without the owner’s knowledge, the owner may choose to immobilize the vehicle with the appropriate text message command. The GSM shield will receive the notification and will cause an interrupt in the Pi’s main thread. The Pi then queries the GSM shield for the notification received and will parse this notification to read the actual command. After reading the command the Pi will open the digital switch between the fuse box and ECU. The ECU then has no knowledge of the fuse box’s status and begins to assume a worst-case scenario. The ECU will then send a message to the engine block to kill all processes. This turns the vehicle off. 
 

@@ -4,11 +4,14 @@ To many people, a motor vehicle is often the second largest investment they make
 
 ## Overview
 
+![Screen Shot 2021-04-14 at 6 04 52 PM](https://user-images.githubusercontent.com/43019063/114786333-ebda6a80-9d4b-11eb-8d52-0b12b335f5a6.png)
+** Figure 1. A block diagram laying out the fundamental hardware components of the device and how the device interfaces with the vehcile. **
+
 The prototype makes use of a Raspberry Pi 3b+ for computerized control, a GSM shield (with a SIM card from a valid network provider in the country of use) to read and send text messages and a GPS shield to read world co-ordinates. The prototype device communicates with the user’s cellular device using text messaging. The text messages are then parsed, and the necessary action will be taken. 
 
 The Raspberry Pi interfaces with the vehicle by means of the ignition 50 (IGN 50) wire. IGN 50 is a wire that connects the vehicle’s fuse box to the vehicle’s Engine Control Unit (ECU). The Raspberry Pi introduces a digital switch in this wire. 
 
-###### How the device works
+## How the device works
 
 When the vehicle is first turned on, the IGN 50 input is read by the Pi. The Pi then sends a text message notification to the user’s mobile device, alerting them that their vehicle is turned on. If the vehicle is being used by someone that is known by the owner, the owner may choose to do nothing after receiving the notification. But if the vehicle has been turned on without the owner’s knowledge, the owner may choose to immobilize the vehicle with the appropriate text message command. The GSM shield will receive the notification and will cause an interrupt in the Pi’s main thread. The Pi then queries the GSM shield for the notification received and will parse this notification to read the actual command. After reading the command the Pi will open the digital switch between the fuse box and ECU. The ECU then has no knowledge of the fuse box’s status and begins to assume a worst-case scenario. The ECU will then send a message to the engine block to kill all processes. This turns the vehicle off. 
 

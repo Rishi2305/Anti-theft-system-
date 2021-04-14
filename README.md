@@ -5,7 +5,7 @@ To many people, a motor vehicle is often the second largest investment they make
 ## Overview
 
 ![Screen Shot 2021-04-14 at 6 04 52 PM](https://user-images.githubusercontent.com/43019063/114786333-ebda6a80-9d4b-11eb-8d52-0b12b335f5a6.png)
-**Figure 1.** A block diagram laying out the fundamental hardware components of the device and how the device interfaces with the vehcile.
+**Figure 1.** A block diagram laying out the fundamental hardware components of the device and how the device interfaces with the vehicle.
 
 The prototype makes use of a Raspberry Pi 3b+ for computerized control, a GSM shield (with a SIM card from a valid network provider in the country of use) to read and send text messages and a GPS shield to read world co-ordinates. The prototype device communicates with the user’s cellular device using text messaging. The text messages are then parsed, and the necessary action will be taken. 
 

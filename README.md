@@ -25,6 +25,51 @@ Before any incoming command is parsed, the phone number it is received from is c
 
 **Figure 2.** A list of accepted commands by the device and the action taken for each command.
 
+## Description of important functions
+
+**1. Event Handling**
+'''
+def event_handling(registered_numbers):
+    """ Handling commands received through SMS """
+    screen = serial.Serial("/dev/ttyUSB0",9600,timeout=3) # Reading serial port to check for any notifications
+    notification = []
+    notification = GSM_status(screen,80).split(",")
+    if notification[0] != '' and "+CMT" in notification[0]:
+        print("new sms received")
+        message,number = read_message(notification)
+        if user_verification(number,registered_numbers):
+            if message == "START": # Command to restart a stalled car
+                turn_on()
+                print("LED turned on")
+            elif message ==  "STOP": # Command to stall a running car
+                turn_off()
+                print("LED turned off")
+            elif "REGISTER DEVICE:" in message: #Command to register a new user to  database of registered users
+                print("Registering")
+                new_user = user_number(message)
+                # Checking if number to be added already exists in the file, and only adding if it is not 
+                if new_user in registered_numbers:
+                    print("Number already stored")
+                else:
+                    registered_numbers.append(new_user)
+                    print("Adding number")
+            elif "DELETE DEVICE:" in message:   #Command to remove a user from database of registered users
+                del_user = user_number(message)
+                # Checking if number to be deleted is stored in the file, and only deleting if it is
+                if del_user in registered_numbers:
+                    i = registered_numbers.index(del_user)
+                    del registered_numbers[i]
+                    print("User deregistered")
+                else:
+                    print("User does not exist in database")
+            elif "LOCATION" in message:
+                send_coordinates(number)
+'''
+
+**2. ** 
+
+**3. **
+
 ## Further Development
 
 A Raspberry Pi is not a true embedded device as it runs an operating system (OS), i.e., the Linux based Raspbian OS. Devices used in real time systems do not run an OS as it causes a significant delay in how the device works. Before this prototype can be commercialized, it must be redeveloped on a bare-metal embedded board with software written in C. This will allow for a real time system that can parse and carry out commands much faster than the prototype, providing better control over the vehicle. 

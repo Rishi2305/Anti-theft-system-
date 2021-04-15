@@ -36,15 +36,15 @@ def event_handling(registered_numbers):
     notification = []
     notification = GSM_status(screen,80).split(",")
     if notification[0] != '' and "+CMT" in notification[0]:
-        print("new sms received")
+        print("new payload received")
         message,number = read_message(notification)
         if user_verification(number,registered_numbers):
             if message == "START": # Command to restart a stalled car
                 turn_on()
-                print("LED turned on")
+                print("Vehicle turned on")
             elif message ==  "STOP": # Command to stall a running car
                 turn_off()
-                print("LED turned off")
+                print("Vehicle turned off")
             elif "REGISTER DEVICE:" in message: #Command to register a new user to  database of registered users
                 print("Registering")
                 new_user = user_number(message)
@@ -67,6 +67,7 @@ def event_handling(registered_numbers):
                 send_coordinates(number)
 ```
 
+This function handles all the interrupts that arise. It loops infinitely within the main function and checks the GSM shield for notifications every 3 seconds. If a notification is received, the payload is parsed to retrieve the message and the number of the sender. The number is used to authenticate the sender. If the sender is not authenticated, the message is discarded. If the sender is authenticated, the appropriate action is taken based on the command.
 
 **2. Parsing commands** 
 

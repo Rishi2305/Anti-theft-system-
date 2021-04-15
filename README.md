@@ -83,6 +83,8 @@ def read_message(notification):
     return (message.upper(), int(number))
 ```
 
+When a new notification is received, there are a few steps that must be taken before the actual message and number of the sender can be accessed. The payload contains many newline and carriage return characters and other pieces of data that do not hold significance in the workings of this prototype such as the name of the service provider, the number of messages in the device’s inbox, and the date and time of the message received. The function above accurately navigates the received payload string to discard the insignificant data and retrieve only the content of the message and the number that the message was sent from. It then returns the data in the form of a tuple.
+
 **3. Authentication**
 
 ```

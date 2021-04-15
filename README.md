@@ -94,6 +94,8 @@ def user_verification(number,registered_numbers):
     else: return False
 ```
 
+This function is responsible for authorizing the sender of the command. The parameters of the function are the number of the sender and a list of authorizing numbers. The function returns True if the number is authorized and False otherwise. The list of authorized numbers is retrieved from a text file stored on the Pi’s memory. The file would be read in once, in the main loop, each time the vehicle is turned on. This is to make the device efficient by not wasting time opening and reading a file once per loop. If a new number is registered to the device or an existing number is deleted, the list containing the authorized numbers is immediately updated. The text file will only be updated once when the vehicle is turned off. This is also to the benefit of the device’s efficiency. 
+
 ## Further Development
 
 A Raspberry Pi is not a true embedded device as it runs an operating system (OS), i.e., the Linux based Raspbian OS. Devices used in real time systems do not run an OS as it causes a significant delay in how the device works. Before this prototype can be commercialized, it must be redeveloped on a bare-metal embedded board with software written in C. This will allow for a real time system that can parse and carry out commands much faster than the prototype, providing better control over the vehicle. 

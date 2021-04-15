@@ -72,6 +72,7 @@ def event_handling(registered_numbers):
 
 ```
 def read_message(notification):
+    """ Parsing notification to retreive message """
     param1 = notification[0]
     param2 = notification[3]
     pos1 = param1.find('"')

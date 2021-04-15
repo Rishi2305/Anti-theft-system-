@@ -81,7 +81,7 @@ def read_message(notification):
     return (message.upper(), int(number))
 ```
 
-**3. Authentication **
+**3. Authentication**
 
 ```
 def user_verification(number,registered_numbers):

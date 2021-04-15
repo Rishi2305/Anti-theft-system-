@@ -67,9 +67,28 @@ def event_handling(registered_numbers):
                 send_coordinates(number)
 ```
 
-**2. ** 
 
-**3. **
+**2. Parsing commands** 
+
+```
+def read_message(notification):
+    param1 = notification[0]
+    param2 = notification[3]
+    pos1 = param1.find('"')
+    number = param1[pos1+2:-1]
+    pos2 = param2.find('\n')
+    message = param2[pos2+1:-2]
+    return (message.upper(), int(number))
+```
+
+**3. Authentication **
+
+```
+def user_verification(number,registered_numbers):
+    """ Verifying if command is from a registered user """
+    if number in registered_numbers:return True
+    else: return False
+```
 
 ## Further Development
 

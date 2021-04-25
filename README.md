@@ -2,12 +2,12 @@
 
 ## Contents
 
-1. Introduction
-2. Overview
-3. How the device works
-4. Description of important functions
-5. Further development
-6. References
+1. [Introduction](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#introduction)
+2. [Overview](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#introduction)
+3. [How the device works]
+4. [Description of important functions]
+5. [Further development]
+6. [References]
 
 ## Introduction
 

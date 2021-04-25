@@ -7,7 +7,7 @@
 3. [How the device works](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#how-the-device-works)
 4. [Description of important functions](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#description-of-important-functions)
 5. [Further development](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#further-development)
-6. [Conclusion]
+6. [Conclusion](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#conclusion)
 7. [References](https://github.com/Rishi2305/Anti-theft-system-/blob/main/README.md#references)
 
 ## Introduction

@@ -113,3 +113,7 @@ This function is responsible for authorizing the sender of the command. The para
 A Raspberry Pi is not a true embedded device as it runs an operating system (OS), i.e., the Linux based Raspbian OS. Devices used in real time systems do not run an OS as it causes a significant delay in how the device works. Before this prototype can be commercialized, it must be redeveloped on a bare-metal embedded board with software written in C. This will allow for a real time system that can parse and carry out commands much faster than the prototype, providing better control over the vehicle. 
 
 Furthermore, a mobile application will also need to be developed to provide the users with a friendly and efficient interface to communicate with the device. The method of communication between the mobile device and the embedded device will need to change from text messaging to cloud-based communication using MQTT or HTTPS protocols. This will allow easy integration into the mobile app, enable secure data transmission and increase the rate at which the mobile device and the embedded device can communicate. The mobile app would also implement a map interface that uses the received coordinates (from the tracking command) to quickly and easily visualize the location of the vehicle.
+
+## Conclusion
+
+## References

@@ -116,4 +116,6 @@ Furthermore, a mobile application will also need to be developed to provide the 
 
 ## Conclusion
 
+This prototype aims to protect vehicle owners by combating carjacks and hijacks. The device introduces a digital computerized switch in the IGN 50 wire. When this switch is opened, the ECU of the vehicle assumes a worst-case scenario and kills all engine processes, stalling the vehicle and bringing it to a slow stop. It provides a simple user interface by leveraging the existing communication technology in text messaging. The software uses asynchronous programming principles to implement an interrupt based continuous loop. The device also implements software for user authentication to ensure that the device can only be used by registered and trusted users. When completed on an embedded board, will provide a robust security device that will allow users to feel more safe on the road.
+
 ## References

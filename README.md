@@ -119,3 +119,15 @@ Furthermore, a mobile application will also need to be developed to provide the 
 This prototype aims to protect vehicle owners by combating carjacks and hijacks. The device introduces a digital computerized switch in the IGN 50 wire. When this switch is opened, the ECU of the vehicle assumes a worst-case scenario and kills all engine processes, stalling the vehicle and bringing it to a slow stop. It provides a simple user interface by leveraging the existing communication technology in text messaging. The software uses asynchronous programming principles to implement an interrupt based continuous loop. The device also implements software for user authentication to ensure that the device can only be used by registered and trusted users. When completed on an embedded board, will provide a robust security device that will allow users to feel more safe on the road.
 
 ## References
+
+“1 Car Hijacked Every 32 Minutes in South Africa.” Armormax, 22 June 2020, www.armormax.com/blog/1-car-hijacked-every-32-minutes-in-south-africa/. 
+Africa, Statistics South. “Housebreaking Still Number One Crime in SA.” Statistics South Africa, www.statssa.gov.za/?p=13811. 
+ECU (Electronic Control Unit) Explained, www.ecutesting.com/categories/ecu-explained/. 
+GPS Module for Arduino and Raspberry Pi, www.cooking-hacks.com/documentation/tutorials/gps-module-arduino-raspberry-pi-tutorial/index.html. 
+GPS Shield Hookup Guide, learn.sparkfun.com/tutorials/gps-shield-hookup-guide/all. 
+Last Minute Engineers. “In-Depth: Send Receive SMS & Call with SIM900 GSM Shield & Arduino.” Last Minute Engineers, Last Minute Engineers, 18 Dec. 2020, lastminuteengineers.com/sim900-gsm-shield-arduino-tutorial/. 
+Real Python. “Async IO in Python: A Complete Walkthrough.” Real Python, Real Python, 3 Apr. 2021, realpython.com/async-io-python/. 
+“Tips for Using the LinkSprite Sim900 GSM Shield with PcDuino v2.” RSS, richard.to/programming/tips-for-using-the-linksprite-sim900-gsm-shield-with-pcduino-v2.html. 
+Vogel03/24/2011, Eric. “Asynchronous Programming in .NET: I'll Call You Back.” Visual Studio Magazine, visualstudiomagazine.com/articles/2011/03/24/wccsp_asynchronous-programming.aspx. 
+Williams, Mark. “Using Python with a GPS Receiver on a Raspberry Pi.” Ozzmaker.com, 21 Nov. 2018, ozzmaker.com/using-python-with-a-gps-receiver-on-a-raspberry-pi/. 
+

@@ -21,7 +21,7 @@ To many people, a motor vehicle is often the second largest investment they make
 
 The prototype discussed in this wiki was developed using Python3 for software, a Raspberry Pi 3b+ for computerized control, a GSM shield (with a SIM card from a valid network provider in the country of use) to read and send text messages and a GPS shield to read world co-ordinates. The prototype device communicates with the user’s cellular device using text messaging. The text messages are then parsed, and the necessary action will be taken. 
 
-The Raspberry Pi interfaces with the vehicle by means of the ignition 50 (IGN 50) wire. IGN 50 is a wire that connects the vehicle’s fuse box to the vehicle’s Engine Control Unit (ECU). The Raspberry Pi introduces a digital switch in this wire. 
+The Raspberry Pi interfaces with the vehicle by means of the ignition 50 (IGN 50) wire. IGN 50 is a wire that connects the vehicle’s fuse box to the vehicle’s Engine Control Unit (ECU). The Raspberry Pi introduces a digital switch in this wire. When the switch is closed, the vehicle will drive normally, and when the switch is opened, the vehicle will stall and come to a stop gradually. This gives the user the ability to control the engine status from their mobile device.
 
 ## How the device works
 
